@@ -1,44 +1,37 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const botaoDeAcessibilidade = document.getElementById('botao-acessibilidade');
-    const opcoesDeAcessibilidade = document.getElementById('opcoes-acessibilidade');
+    const botaoAcessibilidade = document.getElementById('botao-acessibilidade');
+    const opcoesAcessibilidade = document.getElementById('opcoes-acessibilidade');
+    const aumentarFonte = document.getElementById('aumentar-fonte');
+    const diminuirFonte = document.getElementById('diminuir-fonte');
+    const alternaContraste = document.getElementById('alterna-contraste');
+    const body = document.body;
 
-    // Mostra/oculta opções de acessibilidade
-    botaoDeAcessibilidade.addEventListener('click', function () {
-        botaoDeAcessibilidade.classList.toggle('rotacao-botao');
-        opcoesDeAcessibilidade.classList.toggle('apresenta-lista');
+    // Abrir/fechar menu de acessibilidade
+    botaoAcessibilidade.addEventListener('click', function () {
+        opcoesAcessibilidade.classList.toggle('apresenta-lista');
+        const expanded = botaoAcessibilidade.getAttribute('aria-expanded') === 'true';
+        botaoAcessibilidade.setAttribute('aria-expanded', !expanded);
     });
 
-    // Botões de fonte
-    const aumentaFonteBotao = document.getElementById('aumentar-fonte');
-    const diminuiFonteBotao = document.getElementById('diminuir-fonte');
+    // Aumentar fonte
+    aumentarFonte.addEventListener('click', function () {
+        let tamanhoAtual = parseFloat(window.getComputedStyle(body).fontSize);
+        body.style.fontSize = (tamanhoAtual + 2) + 'px';
+    });
 
-    let tamanhoAtualFonte = 1;
-
-    aumentaFonteBotao.addEventListener('click', function () {
-        if (tamanhoAtualFonte < 1.8) { 
-            tamanhoAtualFonte += 0.1;
-            document.body.style.fontSize = `${tamanhoAtualFonte}rem`;
+    // Diminuir fonte
+    diminuirFonte.addEventListener('click', function () {
+        let tamanhoAtual = parseFloat(window.getComputedStyle(body).fontSize);
+        if (tamanhoAtual > 10) { // tamanho mínimo
+            body.style.fontSize = (tamanhoAtual - 2) + 'px';
         }
     });
 
-    diminuiFonteBotao.addEventListener('click', function () {
-        if (tamanhoAtualFonte > 0.8) {
-            tamanhoAtualFonte -= 0.1;
-            document.body.style.fontSize = `${tamanhoAtualFonte}rem`;
-        }
-    });
-
-    // Botão de alto contraste
-    const botaoContraste = document.getElementById('contraste');
-    botaoContraste.addEventListener('click', function () {
-        document.body.classList.toggle('alto-contraste');
-    });
-
-    // Botão reset
-    const botaoReset = document.getElementById('resetar');
-    botaoReset.addEventListener('click', function () {
-        tamanhoAtualFonte = 1;
-        document.body.style.fontSize = '1rem';
-        document.body.classList.remove('alto-contraste');
-    });
+    // Alternar contraste
+    if (alternaContraste) {
+        alternaContraste.addEventListener('click', function () {
+            body.classList.toggle('contraste-alto');
+        });
+    }
 });
+
