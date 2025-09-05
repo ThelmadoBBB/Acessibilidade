@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&family=Montserrat:wght@300;400;600&display=swap');
+
+:root {
+    --verde-elphaba: #006400;        /* Verde escuro místico */
+    --magenta-glinda: #b30086;       /* Rosa escuro elegante */
+    --verde-claro: #00c176;          /* Verde vibrante para botões */
+    --cinza-fundo: #f9f7f6;          /* Fundo neutro claro */
+    --cinza-escuro: #1a1a1a;         /* Alternativa para dark mode elegante */
+}
+
+body {
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--cinza-fundo);
+    color: #222;
+    margin: 0;
+    padding: 0;
+}
+
+/* Cabeçalho */
+header {
+    background-color: var(--verde-elphaba);
+    color: white;
+    padding: 1rem 0;
+}
+
+/* Navegação */
+.nav-link {
+    color: var(--magenta-glinda);
+    font-weight: 600;
+    transition: color 0.3s;
+}
+.nav-link:hover {
+    color: var(--verde-claro);
+}
+
+/* Seções */
+section {
+    padding: 5rem 2rem;
+}
+
+/* Fundo da primeira seção */
+.inicio-fundo {
+    background-image: url('img/4965007.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 40px;
+    width: 100%;
+    height: 606px;
+    padding: 40px;
+    margin: 0 auto;
+    position: relative;
+    color: white;
+}
+
+/* Imagem lateral */
+.img-inicio {
+    position: absolute;
+    right: 0;
+    top: 18rem;
+    width: 45rem;
+    height: auto;
+}
+
+/* Conteúdo da esquerda */
+.esquerda-conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+/* Botões principais */
+.botao-inicio {
+    background-color: var(--verde-claro);
+    border-radius: 30px;
+    border: none;
+    width: 14em;
+    height: 3em;
+    font-weight: bold;
+    color: #fff;
+    transition: background-color 0.3s;
+}
+.botao-inicio:hover {
+    background-color: var(--magenta-glinda);
+}
+
+/* Título principal com fonte dramática */
+.display-4 {
+    font-family: 'Playfair Display SC', serif;
+    text-shadow: -3px 3px var(--verde-claro);
+    font-size: 3rem;
+}
+
+/* Seção temática */
+#tropicalia {
+    position: relative;
+    background: url('img/flor.png') top right no-repeat,
+                url('img/flor-esquerda.png') bottom left no-repeat;
+    background-size: 180px 180px;
+    margin: 3rem 0;
+    padding-top: 5rem;
+}
+
+/* Container da seção */
+#tropicalia .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    position: relative;
+}
+
+/* Títulos */
+h2, h3, h4 {
+    font-family: 'Playfair Display SC', serif;
+    color: var(--verde-elphaba);
+}
+
+/* Galeria */
+#galeria {
+    background-color: #fff0f5;
+}
+.fundo-galeria {
+    background: url('img/flor-bottom-direita.png') bottom right no-repeat;
+    background-size: 180px 180px;
+}
+
+/* Seção de contato */
+#contato {
+    background-image: url('img/4965007.jpg');
+    background-size: cover;
+    padding: 4rem 0;
+    color: white;
+}
+
+/* Formulário */
+.formulario {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+    font-weight: bold;
+    color: #000;
+}
+.formulario button {
+    background-color: var(--magenta-glinda);
+    border: none;
+    font-weight: bold;
+    color: white;
+    padding: 0.6rem 1.5rem;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+.formulario button:hover {
+    background-color: var(--verde-elphaba);
+}
+.form-control {
+    background-color: #f1edef;
+    border: 1px solid #ccc;
+}
+
+/* Acessibilidade */
+.menu-acessibilidade {
+    position: fixed;
+    top: 2rem;
+    right: 20px;
+    z-index: 1000;
+}
+.rotacao-botao {
+    transform: rotate(-90deg);
+    transform-origin: right center;
+}
+.opcoes-acessibilidade {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.opcoes-acessibilidade button {
+    margin-bottom: 5px;
+    background-color: var(--verde-elphaba);
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+.apresenta-lista {
+    display: none;
+}
